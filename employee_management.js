@@ -8,9 +8,10 @@ class Employee {
     }
     getDetails(){        //returns a string with the employee’s name, position, and salary
       console.log (`${this.name} position is: ${this.position} and their salary is $${this.salary}`);
-    //Testing the function
-    const employeeTest= new Employee("Jane Doe",50000,"Security Analyst","Cybersecurity");
-    employeeTest.getDetails();
     }
 }
+    //Testing the function
+    const employeeTest= new Employee("Jane Doe",80000,"Security Analyst","Cybersecurity");
+    employeeTest.getDetails();
+   
 
