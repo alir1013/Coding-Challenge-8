@@ -44,10 +44,38 @@ class Manager extends Employee {    //Manager inherits from employee with the ex
 //Task 4: Handle Bonuses for Managers
 function calculateTotalSalaryWithBonus(department){
     return department.employees.reduce((total, employee) => {
-         if (employee instanceof Manager) {
-             return total + employee.salary + employee.bonus;
+         if (employee instanceof Manager) {   //Adding bonus
+             return total + employee.salary + employee.bonus; //Calculating total salary
          }
          return total + employee.salary;
      }, 0);
  }
- 
+
+ //Task 5: Creating and Managing Departments and Employees
+
+// Create departments
+
+const business = new Department("Business");
+const cybersecurity = new Department("Cybersecurity");
+
+// Create employees
+
+const jane = new Employee("Jane", 80000, "Financial Advisor", "Business");
+const billy = new Employee("Billy", 75000, "Security Analyst", "Cybersecurity");
+const alicia = new Manager("Alicia", 120000, "HR Manager", "Business", 20000);
+const diana = new Manager("Diana", 130000, "Marketing Manager", "Marketing", 25000);
+
+// Add employees to departments
+
+business.addEmployee(jane);
+business.addEmployee(billy);
+cybersecurity.addEmployee(alicia);
+cybersecurity.addEmployee(diana);
+
+// Calculate total salary for each department
+
+console.log(`Total salary for Business Department: $${business.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Business Department: $${calculateTotalSalaryWithBonus(business)}`);
+console.log(`Total salary for Cybersecurity Department: $${cybersecurity.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Cybersecurity Department: $${calculateTotalSalaryWithBonus(cybersecurity)}`);
+
