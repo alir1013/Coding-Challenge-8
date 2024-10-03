@@ -11,13 +11,13 @@ class Employee {
     }
 }
     //Testing the function
-    const employeeTest= new Employee("Jane Doe",80000,"Security Analyst");
+    const employeeTest= new Employee("Jane Doe",80000,"Security Analyst","Cybersecurity");
     employeeTest.getDetails();
    
 
 //Task 2: Creating a Department Class
 class Department{
-    constructor(name){
+    constructor(name,_employees){
         this.name = name;
         this.employees = [];
     }
@@ -25,7 +25,10 @@ class Department{
         this.employees.push(employee);
     }
     getDepartmentSalary(){
-        return this.employees.reduce((total,employees) => total + this.employees.salary, 0); 
+        return this.employees.reduce((total,employee) => {
+            return total + (employee.salary || 0);
+        },0);
+
     }
 }
 
