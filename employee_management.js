@@ -40,3 +40,14 @@ class Manager extends Employee {    //Manager inherits from employee with the ex
         console.log (`${this.name} position is: ${this.position},their salary is $${this.salary}, and they have a bonus of $${this.bonus}`);
     }
 }
+
+//Task 4: Handle Bonuses for Managers
+function calculateTotalSalaryWithBonus(department){
+    return department.employees.reduce((total, employee) => {
+         if (employee instanceof Manager) {
+             return total + employee.salary + employee.bonus;
+         }
+         return total + employee.salary;
+     }, 0);
+ }
+ 
