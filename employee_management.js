@@ -25,7 +25,7 @@ class Department{
         this.employees.push(employee);
     }
     getDepartmentSalary(){
-        return this.employees.reduce((total,employee) => total + this.employee.salary,0); 
+        return this.employees.reduce((total,employees) => total + this.employees.salary, 0); 
     }
 }
 
@@ -63,13 +63,13 @@ const cybersecurity = new Department("Cybersecurity");
 const jane = new Employee("Jane", 80000, "Financial Advisor", "Business");
 const billy = new Employee("Billy", 75000, "Security Analyst", "Cybersecurity");
 const alicia = new Manager("Alicia", 120000, "HR Manager", "Business", 20000);
-const diana = new Manager("Diana", 130000, "Marketing Manager", "Marketing", 25000);
+const diana = new Manager("Diana", 130000, "Cybersecurity Manager", "Cybersecurity", 25000);
 
 // Add employees to departments
 
 business.addEmployee(jane);
-business.addEmployee(billy);
-cybersecurity.addEmployee(alicia);
+cybersecurity.addEmployee(billy);
+business.addEmployee(alicia);
 cybersecurity.addEmployee(diana);
 
 // Calculate total salary for each department
